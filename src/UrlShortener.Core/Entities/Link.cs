@@ -16,27 +16,26 @@ public class Link : BaseEntity<Link>
         ClickCount = 0;
         
         ValidateEntity(new LinkValidator());
-        AddDomainEvent(new LinkCreatedEvent(Id, url, shortCode, expiresAt, userId));
     }
     
-    public string Url { get; set; }
-    public string ShortCode { get; set; }
-    public DateTime? ExpiresAt { get; set; }
-    public Guid UserId { get; set; }
-    public decimal ClickCount { get; set; }
+    public string Url { get; private set; }
+    public string ShortCode { get; private set; }
+    public DateTime? ExpiresAt { get; private set; }
+    public Guid UserId { get; private set; }
+    public long ClickCount { get; private set; }
 
-    public void IncrementClickCount()
-    {
+    public void IncrementClickCount() =>
         ClickCount++;   
-    }
 
-    public bool IsExpired()
-    {
-        return ExpiresAt.HasValue && ExpiresAt.Value < DateTime.UtcNow;   
-    }
+    public bool IsExpired(DateTime now) =>
+        ExpiresAt.HasValue && ExpiresAt.Value < now;
 
-    public static Link Create(string url, string shortUrl, DateTime? expiresAt, Guid userId)
+    public static Link Create(string url, string shortCode, DateTime? expiresAt, Guid userId)
     {
-        return new Link(url, shortUrl, expiresAt, userId);
+        var link = new Link(url, shortCode, expiresAt, userId);
+        
+        link.AddDomainEvent(new LinkCreatedEvent(link.Id, url, shortCode, expiresAt, userId));
+        
+        return link;
     }
 }
