@@ -43,9 +43,11 @@ public class CreateLinkCommandHandler(
         await linkWriteRepository.AddAsync(shortLink, cancellationToken);
         await linkWriteRepository.SaveChangesAsync(cancellationToken);
         
-        return new CreateLinkCommandResponseDto(dto.Url, shortLink.ShortCode, shortLink.ExpiresAt);
+        return new CreateLinkCommandResponseDto(
+            shortLink.Url, shortLink.ShortCode, shortLink.UserId, shortLink.ExpiresAt);
     }
 }
 public record CreateLinkCommand(Guid UserId, CreateLinkCommandDto Dto) : IRequest<CreateLinkCommandResponseDto>;
+
 public record CreateLinkCommandDto(string Url);
-public record CreateLinkCommandResponseDto(string Url, string ShortUrl, DateTime? ExpiresAt);
+public record CreateLinkCommandResponseDto(string Url, string ShortCode, Guid UserId, DateTime? ExpiresAt);
