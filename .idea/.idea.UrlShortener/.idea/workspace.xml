@@ -9,18 +9,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aec316b3-16c7-470e-af74-74d4b3be6fa6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/UrlShortener.API/Controllers/LinkController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UrlShortener.API/Middlewares/AuthMiddleware.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UrlShortener.API/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UrlShortener.API/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UrlShortener.API/UrlShortener.API.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UrlShortener.API/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UrlShortener.API/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UrlShortener.Application/UrlShortener.Application.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UrlShortener.Infrastructure/Interfaces/IAuthService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UrlShortener.Infrastructure/UrlShortener.Infrastructure.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UrlShortener.API/Controllers/RedirectController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UrlShortener.Application/UseCases/Queries/GetOriginalUrlQuery.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UrlShortener/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UrlShortener/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UrlShortener.Application/UseCases/Commands/CreateLinkCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/UrlShortener.Application/UseCases/Commands/CreateLinkCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UrlShortener.Core/Interfaces/Repositories/Read/ILinkReadRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/UrlShortener.Core/Interfaces/Repositories/Read/ILinkReadRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UrlShortener.Infrastructure/Interfaces/IAuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/UrlShortener.Infrastructure/Interfaces/IAuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UrlShortener.Infrastructure/Persistence/Repositories/Read/LinkReadRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/UrlShortener.Infrastructure/Persistence/Repositories/Read/LinkReadRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +96,7 @@
       <workItem from="1755448387893" duration="4248000" />
       <workItem from="1755540165573" duration="2528000" />
       <workItem from="1755634693433" duration="4252000" />
-      <workItem from="1756570598398" duration="2101000" />
+      <workItem from="1756570598398" duration="3132000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -128,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755542584976</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add auth middleware">
+      <option name="closed" value="true" />
+      <created>1756572880501</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1756572880501</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,7 +154,8 @@
     <MESSAGE value="init" />
     <MESSAGE value="add create usecase" />
     <MESSAGE value="persistence added" />
-    <option name="LAST_COMMIT_MESSAGE" value="persistence added" />
+    <MESSAGE value="add auth middleware" />
+    <option name="LAST_COMMIT_MESSAGE" value="add auth middleware" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

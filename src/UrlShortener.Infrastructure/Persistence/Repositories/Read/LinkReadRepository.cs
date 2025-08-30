@@ -9,4 +9,9 @@ public class LinkReadRepository(UrlShortenerDbContext context) : BaseReadReposit
     {
         return context.Links.Any(l => l.ShortCode == shortCode);   
     }
+
+    public async Task<string> GetByShortCodeAsync(string shortCode, CancellationToken cancellationToken)
+    {
+        return context.Links.Single(l => l.ShortCode == shortCode).ShortCode;
+    }
 }
